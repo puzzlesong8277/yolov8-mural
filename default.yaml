@@ -1,0 +1,38 @@
+task: segment #yolu task,i.e. detect,segment,classify,pose
+mode: train #yolo mode,i.e. train,val,predict,
+
+#Train Setting
+model: /home/lwf/nanting/yolov8/ultralytics-main/yolov8x-seg.pt
+#data: /home/lwf/nanting/yolov8/ultralytics-main/datasets/Dataset-200/Dataset-200.yaml
+epochs: 300
+patience: 100
+batch: 8
+imgsz: 512
+save: True
+save_period: 5
+cache: False
+devoice: 
+workers: 8
+project: train-segment
+name: dataset-100-murals
+exist_ok: False
+pretrained: False
+optimizer: auto
+verbose: True
+seed: 0
+deterministic: True
+single_cls: False
+rect: False
+cos_lr: False
+close_mosaic: 0
+resume: False
+
+train: /home/lwf/nanting/yolov8/ultralytics-main/datasets/dataset100_murals/images/train # train images (relative to 'path') 128 images
+val: /home/lwf/nanting/yolov8/ultralytics-main/datasets/dataset100_murals/images/val  # val images (relative to 'path') 128 images
+# Classes
+names:
+  0: degradation2
+  1: degradation1
+  2: degradation3
+  3: degradation4
+
